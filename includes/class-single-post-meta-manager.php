@@ -2,6 +2,13 @@
 
 /**
  * The Single Post Meta Manager is the core plugin responsible for including and
+ * instantiating all of the code that composes the plugin
+ *
+ * @package SPMM
+ */
+
+/**
+ * The Single Post Meta Manager is the core plugin responsible for including and
  * instantiating all of the code that composes the plugin.
  *
  * The Single Post Meta Manager includes an instance to the Single Post Manager
@@ -64,6 +71,8 @@ class Single_Post_Meta_Manager {
 
 	}
 
+
+
 	/**
 	 * Imports the Single Post Meta administration classes, and the Single Post Meta Loader.
 	 *
@@ -73,6 +82,8 @@ class Single_Post_Meta_Manager {
 	 * The Single Post Meta Manager Loader is the class that will coordinate the hooks and callbacks
 	 * from WordPress and the plugin. This function instantiates and sets the reference to the
 	 * $loader class property.
+	 *
+	 * @access    private
 	 */
 	private function load_dependencies() {
 
@@ -89,6 +100,8 @@ class Single_Post_Meta_Manager {
 	 *
 	 * This function relies on the Single Post Meta Manager Admin class and the Single Post Meta Manager
 	 * Loader class property.
+	 *
+	 * @access    private
 	 */
 	private function define_admin_hooks() {
 
