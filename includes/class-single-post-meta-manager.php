@@ -68,6 +68,7 @@ class Single_Post_Meta_Manager {
 
 		$this->load_dependencies();
 		$this->define_admin_hooks();
+		$this->define_public_hooks();
 
 	}
 
@@ -88,6 +89,7 @@ class Single_Post_Meta_Manager {
 	private function load_dependencies() {
 
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-single-post-meta-manager-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-single-post-meta-manager-public.php';
 
 		require_once plugin_dir_path( __FILE__ ) . 'class-single-post-meta-manager-loader.php';
 		$this->loader = new Single_Post_Meta_Manager_Loader();
@@ -108,6 +110,22 @@ class Single_Post_Meta_Manager {
 		$admin = new Single_Post_Meta_Manager_Admin( $this->get_version() );
 		$this->loader->add_action( 'admin_enqueue_scripts', $admin, 'enqueue_styles' );
 		$this->loader->add_action( 'add_meta_boxes', $admin, 'add_meta_box' );
+
+	}
+
+	/**
+	 * Defines the hooks and callback functions that are used for rendering information on the front
+	 * end of the site.
+	 *
+	 * This function relies on the Single Post Meta Manager Public class and the Single Post Meta Manager
+	 * Loader class property.
+	 *
+	 * @access    private
+	 */
+	private function define_public_hooks() {
+
+		$public = new Single_Post_Meta_Manager_Public( $this->get_version() );
+		$this->loader->add_action( 'the_content', $public, 'display_post_meta_data' );
 
 	}
 
