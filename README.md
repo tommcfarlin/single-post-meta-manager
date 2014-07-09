@@ -2,9 +2,9 @@
 
 * Contributors: [tommcfarlin](http://tommcfarlin.com/)
 * Tags: posts
-* Requires at least: 3.9.0
-* Tested up to: 3.9.0
-* Stable tag: 1.0.0
+* Requires at least: 3.9.1
+* Tested up to: 3.9.1
+* Stable tag: 2.0.0
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,4 +50,4 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 ## ChangeLog
 
-Please see [CHANGES.md](CHANGES.md)
+For very important notes, especially aboug 2.0.0, please see [CHANGES.md](CHANGES.md)
